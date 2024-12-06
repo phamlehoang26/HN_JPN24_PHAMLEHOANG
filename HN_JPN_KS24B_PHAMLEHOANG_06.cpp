@@ -96,6 +96,7 @@ int main(){
 	    case 11:
 	    	printf("\nthoat chuong trinh");
 	    	break;
+		   break;
 				
 	   		
 	   			
