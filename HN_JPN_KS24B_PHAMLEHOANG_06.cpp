@@ -3,7 +3,7 @@ int main(){
 	int arr[100];
 	int choice;
 	int size;
-	int index;
+        int index;
 	int check=1;
 	int n;
 	do{
@@ -45,16 +45,16 @@ int main(){
 					printf("\nBan chua them phan tu vao mang");
 				}
 				printf("\nNhap vi tri can them phan tu: ");
-				scanf("%d", &index);
+				scanf("%d", &size);
 				if(index > n){
 					printf("\nVi tri ban nhap vuot qua do dai mang");
 				}
 				else{
-					for(int i = n; i >= index; i--){
+					for(int i = n; i >= size; i--){
 						arr[i] = arr[i-1];
 					}
 				}
-				scanf("%d", &arr[index]);
+				scanf("%d", &arr[size]);
 				break;
 		case 7:
 			for(int i = 0;i < size ; i++ ){
