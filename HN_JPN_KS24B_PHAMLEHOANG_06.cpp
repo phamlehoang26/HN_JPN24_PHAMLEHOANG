@@ -3,7 +3,7 @@ int main(){
 	int arr[100];
 	int choice;
 	int size;
-        int index;
+	int index;
 	int check=1;
 	int n;
 	do{
@@ -39,23 +39,49 @@ int main(){
 	   	 		printf("%d\t",arr[i]);
 				}
 				printf("\n");
-				    break;
+				    break;			    
+	
 		case 5:
 			if(check == 0){
 					printf("\nBan chua them phan tu vao mang");
 				}
 				printf("\nNhap vi tri can them phan tu: ");
-				scanf("%d", &size);
+				scanf("%d", &index);
 				if(index > n){
 					printf("\nVi tri ban nhap vuot qua do dai mang");
 				}
 				else{
-					for(int i = n; i >= size; i--){
+					for(int i = n; i >= index; i--){
 						arr[i] = arr[i-1];
 					}
 				}
-				scanf("%d", &arr[size]);
+				scanf("%d", &arr[index]);
 				break;
+			case 6:
+				if(size<=0){
+					printf("moi ban nhap giai tri can vao mang\t");
+					break;
+			}else {
+				int xoa_phantu;
+				do{
+	                printf("Nhap vi tri phan tu can xoa(0 den %d): ",size-1);
+	                scanf("%d", &xoa_phantu);
+	                if(xoa_phantu>size){
+	                	printf("moi ban nhap lai gia tri can xoa");
+					}
+			    }while(xoa_phantu>size);
+	                for(int i=xoa_phantu;i<size;i++){
+	                	if(xoa_phantu==i){
+	                		arr[i]=arr[i+1];
+						}
+					}
+				size--;
+				printf("mang sau khi xoa la \n");
+				for(int i=0;i<size;i++){
+							printf("%d\t",arr[i]);
+				}
+			}
+			break;
 		case 7:
 			for(int i = 0;i < size ; i++ ){
         		int key = arr[i];
@@ -96,54 +122,12 @@ int main(){
 	    case 11:
 	    	printf("\nthoat chuong trinh");
 	    	break;
-		   break;
-				
-	   		
-	   			
-	   		
-			   
-	   	        
-	   	
-	   	
-	   	
-	   	
-	   	
+	    	default:
+	    		printf("moi ban nhap lai lua chon\n");
+	    	
 	   }//do while
 	   
-	
-			
-			
-			
-			
-			
-			
-			
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}while(choice !=11);//do
-	
 	
 	return 0;
 }
